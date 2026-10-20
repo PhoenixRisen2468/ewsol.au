@@ -3,776 +3,584 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Engineered Water Solutions</title>
-
+<title>Engineered Water Solutions | Farm Irrigation, Pumps &amp; Water Engineering — Tasmania</title>
+<meta name="description" content="Pivots, pumps, dams and filtration across Tasmania. Thirty-odd years in water — you deal with Mitchell, not a call centre. Ring 0475 212 468.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Engineered Water Solutions",
+  "url": "https://ewsol.au",
+  "telephone": "+61475212468",
+  "email": "mitchell@ewsol.au",
+  "description": "Farm irrigation, pump stations, filtration and water engineering across Tasmania.",
+  "founder": { "@type": "Person", "name": "Mitchell Jacques" },
+  "areaServed": ["Tasmania", "Hobart", "Launceston", "Northern Midlands", "North West Coast", "Central Highlands", "Derwent Valley"],
+  "address": {
+    "@type": "PostalAddress",
+    "postOfficeBoxNumber": "76",
+    "addressLocality": "Kings Meadows",
+    "addressRegion": "TAS",
+    "postalCode": "7249",
+    "addressCountry": "AU"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Water engineering services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Centre pivot and farm irrigation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pump stations and boosters" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dam, river and bore filtration" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Off-grid and solar water systems" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Water and wastewater infrastructure" } }
+    ]
+  }
+}
+</script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
   :root {
-    --ink: #0a0e14;
-    --steel: #1c2635;
-    --teal: #00b4b4;
-    --teal-dark: #007f7f;
-    --mist: #e8f0f0;
-    --white: #ffffff;
-    --mid: #6b8080;
+    --dolerite: #3b3f42;
+    --button-grass: #6b7a3a;
+    --eucalypt: #8fa39a;
+    --rust: #a5522d;
+    --cream: #f3efe6;
+    --bass-strait: #2f5566;
+    --paper: #faf7f0;
+    --line: rgba(59, 63, 66, 0.15);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --dolerite: #e8e4d9;
+      --cream: #1c1f22;
+      --paper: #141618;
+      --line: rgba(232, 228, 217, 0.12);
+      --eucalypt: #9fb0a8;
+      --button-grass: #8a9a4a;
+    }
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--ink);
-    color: var(--white);
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(10,14,20,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,180,180,0.15);
-  }
-
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.08em;
-    color: var(--white);
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--teal); }
-
-  nav ul {
-    display: flex; gap: 2.5rem; list-style: none;
-  }
-  nav ul a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--mist);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.2s, color 0.2s;
-  }
-  nav ul a:hover { opacity: 1; color: var(--teal); }
-
-  .nav-cta {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    border: 1px solid var(--teal);
-    padding: 0.55rem 1.4rem;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-  .nav-cta:hover { background: var(--teal); color: var(--ink); }
-
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 8rem 4rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  #hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 60% 80% at 80% 50%, rgba(0,180,180,0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,100,100,0.06) 0%, transparent 60%);
-  }
-
-  .hero-grid-lines {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(0,180,180,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,180,180,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-  }
-
-  .hero-left { position: relative; z-index: 2; }
-
-  .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block; width: 2rem; height: 1px; background: var(--teal);
-  }
-
-  h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 8vw, 7rem);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    margin-bottom: 2rem;
-  }
-  h1 em {
-    font-style: normal;
-    color: var(--teal);
-    display: block;
-  }
-
-  .hero-sub {
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--dolerite);
+    line-height: 1.55;
     font-size: 1.05rem;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.65);
-    max-width: 42ch;
-    margin-bottom: 1rem;
-    font-weight: 300;
   }
+  img { max-width: 100%; display: block; }
+  a { color: var(--bass-strait); }
+  a:hover { color: var(--rust); }
 
-  .hero-formerly {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--mid);
-    letter-spacing: 0.1em;
-    margin-bottom: 2.5rem;
-  }
+  .wrap { width: min(1100px, calc(100% - 2rem)); margin-inline: auto; }
+  .section { padding: 4.5rem 0; }
+  .section + .section { border-top: 1px solid var(--line); }
 
-  .hero-actions { display: flex; gap: 1rem; align-items: center; }
-
-  .btn-primary {
-    background: var(--teal);
-    color: var(--ink);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.9rem 2.2rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
-
-  .btn-ghost {
-    color: var(--white);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.9rem 2.2rem;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: border-color 0.2s;
-  }
-  .btn-ghost:hover { border-color: rgba(255,255,255,0.6); }
-
-  .hero-right {
-    position: relative; z-index: 2;
-    display: flex; justify-content: center; align-items: center;
-  }
-
-  .hero-stat-stack {
-    display: flex; flex-direction: column; gap: 1.5rem;
-    padding: 3rem;
-    border: 1px solid rgba(0,180,180,0.2);
-    background: rgba(255,255,255,0.02);
-    position: relative;
-  }
-  .hero-stat-stack::before {
-    content: '';
-    position: absolute; top: -1px; left: 2rem; width: 4rem; height: 2px;
-    background: var(--teal);
-  }
-
-  .stat-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 1.5rem; }
-  .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
-
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem;
-    color: var(--teal);
-    line-height: 1;
-    letter-spacing: 0.02em;
-  }
-  .stat-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--mid);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-top: 0.3rem;
-  }
-
-  /* ── SECTION COMMON ── */
-  section { padding: 6rem 4rem; }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .section-label::before {
-    content: '';
-    display: block; width: 2rem; height: 1px; background: var(--teal);
-  }
-
-  h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1;
-    letter-spacing: 0.03em;
-    margin-bottom: 1.5rem;
-  }
-
-  /* ── ABOUT ── */
-  #about {
-    background: var(--steel);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .about-body {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.65);
-    font-weight: 300;
-  }
-  .about-body p + p { margin-top: 1.2rem; }
-
-  .about-right { display: flex; flex-direction: column; gap: 2rem; }
-
-  .about-feature {
-    padding: 1.5rem;
-    border-left: 2px solid var(--teal);
-    background: rgba(0,180,180,0.04);
-  }
-  .about-feature h4 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.4rem;
-  }
-  .about-feature p {
-    font-size: 0.875rem;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.6;
-  }
-
-  /* ── SERVICES ── */
-  #services { background: var(--ink); }
-
-  .services-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 4rem;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(0,180,180,0.1);
-  }
-
-  .service-card {
-    background: var(--ink);
-    padding: 3rem 2.5rem;
-    transition: background 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-  .service-card::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: var(--teal);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-    transform-origin: left;
-  }
-  .service-card:hover { background: rgba(0,180,180,0.04); }
-  .service-card:hover::after { transform: scaleX(1); }
-
-  .service-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--teal);
-    letter-spacing: 0.15em;
-    margin-bottom: 2rem;
-    opacity: 0.7;
-  }
-
-  .service-icon {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    display: block;
-  }
-
-  .service-card h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-  }
-
-  .service-card h4 {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--teal);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-  }
-
-  .service-card p {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* ── CLIENTS ── */
-  #clients {
-    background: var(--steel);
-    text-align: center;
-  }
-
-  .clients-intro {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 4rem;
-    font-weight: 300;
-  }
-
-  .clients-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: rgba(0,180,180,0.1);
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .client-cell {
-    background: var(--steel);
-    padding: 2.5rem 1.5rem;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.2s;
-  }
-  .client-cell:hover { background: rgba(0,180,180,0.06); }
-
-  .client-cell span {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.4);
-    text-align: center;
-    transition: color 0.2s;
-  }
-  .client-cell:hover span { color: rgba(255,255,255,0.8); }
-
-  /* ── TESTIMONIAL ── */
-  #testimonials { background: var(--ink); }
-
-  .testimonial-block {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 4rem;
-    border: 1px solid rgba(0,180,180,0.15);
-    position: relative;
-  }
-  .testimonial-block::before {
-    content: '"';
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 10rem;
-    color: var(--teal);
-    opacity: 0.1;
-    position: absolute;
-    top: -2rem; left: 2rem;
-    line-height: 1;
-  }
-
-  .testimonial-text {
-    font-size: 1.2rem;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.8);
-    font-weight: 300;
-    font-style: italic;
-    position: relative; z-index: 1;
-    margin-bottom: 2rem;
-  }
-
-  .testimonial-author {
-    font-family: 'DM Mono', monospace;
+  .label {
     font-size: 0.75rem;
-    color: var(--teal);
-    letter-spacing: 0.15em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
+    color: var(--button-grass);
+    margin-bottom: 0.75rem;
+  }
+  h1, h2, h3 {
+    font-family: "Archivo Black", Impact, sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  h1 { font-size: clamp(2.4rem, 6vw, 4rem); max-width: 14ch; }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 0.75rem; }
+  h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .lede { max-width: 52ch; color: color-mix(in srgb, var(--dolerite) 80%, transparent); }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--cream) 92%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; padding: 0.9rem 0; width: min(1100px, calc(100% - 2rem)); margin-inline: auto;
+  }
+  .logo {
+    font-family: "Archivo Black", Impact, sans-serif;
+    text-decoration: none; color: var(--dolerite); font-size: 1.35rem;
+  }
+  .logo span { color: var(--button-grass); }
+  .nav-links { display: flex; gap: 1.25rem; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    text-decoration: none; color: var(--dolerite); font-size: 0.9rem; font-weight: 600;
+  }
+  .nav-links a:hover { color: var(--rust); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.85rem 1.35rem; text-decoration: none; font-weight: 700;
+    border: 2px solid transparent; min-height: 44px; cursor: pointer;
+    font-family: inherit; font-size: 1rem;
+  }
+  .btn-primary { background: var(--rust); color: #fff; }
+  .btn-primary:hover { background: color-mix(in srgb, var(--rust) 85%, #000); color: #fff; }
+  .btn-ghost { background: transparent; border-color: var(--dolerite); color: var(--dolerite); }
+  .btn-ghost:hover { border-color: var(--rust); color: var(--rust); }
+  .btn-grass { background: var(--button-grass); color: #fff; }
+  .btn-grass:hover { background: color-mix(in srgb, var(--button-grass) 85%, #000); color: #fff; }
+
+  .sticky-call {
+    display: none;
+    position: fixed; right: 1rem; bottom: 1rem; z-index: 60;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
   }
 
-  /* ── CONTACT ── */
-  #contact {
-    background: var(--steel);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
+  /* Hero */
+  #hero {
+    padding: 3.5rem 0 4rem;
+    background:
+      linear-gradient(180deg, var(--paper), var(--cream)),
+      repeating-linear-gradient(90deg, transparent, transparent 40px, var(--line) 40px, var(--line) 41px);
+  }
+  .hero-grid {
+    display: grid; gap: 2.5rem; align-items: end;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+  .hero-note { margin-top: 1.25rem; font-size: 0.95rem; color: color-mix(in srgb, var(--dolerite) 70%, transparent); }
+  .hero-aside {
+    background: var(--bass-strait); color: #f3efe6; padding: 1.5rem;
+    border: 3px solid var(--dolerite);
+  }
+  .hero-aside strong { display: block; font-size: 1.8rem; font-family: "Archivo Black", Impact, sans-serif; margin-bottom: 0.35rem; }
+  .hero-aside p + p { margin-top: 1rem; }
+
+  /* Cards */
+  .cards {
+    display: grid; gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem;
+  }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 1.35rem 1.25rem;
+  }
+  .card p { font-size: 0.98rem; color: color-mix(in srgb, var(--dolerite) 82%, transparent); }
+  .card-num {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 0.6rem;
   }
 
-  .contact-details { display: flex; flex-direction: column; gap: 2rem; }
+  /* Map */
+  .map-block {
+    display: grid; gap: 2rem; grid-template-columns: 1fr 1fr; align-items: center;
+    margin-top: 1.5rem;
+  }
+  .tas-map { width: 100%; max-width: 420px; }
+  .region-list { list-style: none; display: grid; gap: 0.45rem; }
+  .region-list li {
+    padding: 0.55rem 0.75rem; background: var(--paper); border-left: 4px solid var(--button-grass);
+  }
 
-  .contact-item { display: flex; flex-direction: column; gap: 0.3rem; }
-  .contact-item-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--teal);
+  /* Infra */
+  #infra { background: var(--bass-strait); color: #f3efe6; border-top: none; }
+  #infra .label { color: #c5d8a8; }
+  #infra .lede { color: rgba(243,239,230,0.85); }
+  #infra a { color: #f0d2b8; }
+  .cap-list {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 1.5rem;
+    margin: 1.5rem 0 2rem; list-style: none;
   }
-  .contact-item-value {
-    font-size: 1rem;
-    color: rgba(255,255,255,0.8);
-  }
-  .contact-item-value a {
-    color: inherit; text-decoration: none;
-    transition: color 0.2s;
-  }
-  .contact-item-value a:hover { color: var(--teal); }
+  .cap-list li::before { content: "– "; color: var(--button-grass); }
 
-  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-
-  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .form-group label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--mid);
+  /* About */
+  .about-grid {
+    display: grid; gap: 2rem; grid-template-columns: 1fr 1.1fr; align-items: start;
+    margin-top: 1.5rem;
   }
-  .form-group input,
-  .form-group textarea {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: var(--white);
-    padding: 0.85rem 1rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color 0.2s;
-    resize: vertical;
+  .about-photo {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center top;
+    border: 3px solid var(--dolerite);
   }
-  .form-group input:focus,
-  .form-group textarea:focus { border-color: var(--teal); }
-  .form-group textarea { min-height: 120px; }
-
-  .form-submit {
-    background: var(--teal);
-    color: var(--ink);
-    border: none;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background 0.2s;
-    align-self: flex-start;
+  details.paperwork {
+    margin-top: 1.25rem; border-top: 1px solid var(--line); padding-top: 0.85rem;
   }
-  .form-submit:hover { background: var(--teal-dark); }
+  details.paperwork summary {
+    cursor: pointer; font-weight: 700; color: var(--bass-strait);
+  }
 
-  /* ── FOOTER ── */
+  /* Clients */
+  .client-strip {
+    display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem; margin-top: 1.25rem;
+    font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.85rem;
+    color: color-mix(in srgb, var(--dolerite) 65%, transparent);
+  }
+
+  /* Jobs */
+  .job-grid {
+    display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 1.5rem;
+  }
+  .job {
+    background: var(--paper); border: 1px solid var(--line); overflow: hidden;
+    text-decoration: none; color: inherit; display: block;
+  }
+  .job img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+  .job-body { padding: 1rem 1.1rem 1.25rem; }
+  .job-loc { font-size: 0.8rem; font-weight: 700; color: var(--rust); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+
+  /* Steps */
+  .steps {
+    display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 1.5rem;
+  }
+  .step {
+    padding: 1.25rem; background: var(--paper); border-top: 4px solid var(--button-grass);
+  }
+  .step strong { display: block; margin-bottom: 0.4rem; }
+
+  /* Contact */
+  #contact { background: var(--paper); }
+  .contact-grid {
+    display: grid; gap: 2.5rem; grid-template-columns: 1fr 1fr; margin-top: 1.5rem;
+  }
+  .contact-item { margin-bottom: 1.1rem; }
+  .contact-item span {
+    display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--button-grass); margin-bottom: 0.25rem;
+  }
+  .contact-item a, .contact-item p {
+    font-size: 1.15rem; font-weight: 700; text-decoration: none; color: var(--dolerite);
+  }
+  .phone-big { font-size: clamp(1.6rem, 4vw, 2.2rem) !important; color: var(--rust) !important; }
+  .form { display: grid; gap: 0.85rem; }
+  .form label { font-size: 0.85rem; font-weight: 700; }
+  .form input, .form textarea {
+    width: 100%; padding: 0.8rem 0.9rem; border: 2px solid var(--line);
+    background: var(--cream); color: var(--dolerite); font: inherit; min-height: 44px;
+  }
+  .form input:focus, .form textarea:focus { outline: 2px solid var(--button-grass); border-color: transparent; }
+  .form textarea { min-height: 120px; resize: vertical; }
+  .hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+
   footer {
-    background: var(--ink);
-    border-top: 1px solid rgba(0,180,180,0.1);
-    padding: 2rem 4rem;
-    display: flex; justify-content: space-between; align-items: center;
+    padding: 2rem 0; border-top: 1px solid var(--line); font-size: 0.9rem;
+    color: color-mix(in srgb, var(--dolerite) 70%, transparent);
   }
+  .footer-inner { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
 
-  .footer-brand {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.4);
-  }
-  .footer-brand span { color: var(--teal); }
-
-  .footer-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 0.1em;
-  }
-
-  /* ── ANIMATIONS ── */
-  
-  
-  
-
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    nav ul { display: none; }
-    #hero, #about, #contact { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 1.5rem 3rem; }
-    section { padding: 4rem 1.5rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .clients-grid { grid-template-columns: repeat(2, 1fr); }
-    .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+    .hero-grid, .map-block, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .cards, .job-grid, .steps, .cap-list { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .sticky-call { display: inline-flex; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">EWS<span>.</span></a>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="#specialist">Specialist</a></li>
-    <li><a href="#clients">Clients</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Get in Touch</a>
+  <div class="nav-inner">
+    <a class="logo" href="#hero">EWS<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#work">What I do</a></li>
+      <li><a href="#where">Where I go</a></li>
+      <li><a href="#infra">Infrastructure</a></li>
+      <li><a href="#about">Who turns up</a></li>
+      <li><a href="#jobs">Jobs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="tel:+61475212468">Ring Mitchell</a>
+  </div>
 </nav>
 
-<!-- HERO -->
+<a class="btn btn-primary sticky-call" href="tel:+61475212468">Ring Mitchell</a>
+
 <section id="hero">
-  <div class="hero-grid-lines"></div>
-  <div class="hero-left fade-up">
-    <div class="hero-eyebrow">Engineered Water Solutions · Tasmania</div>
-    <h1>Water<br>Engineered<br><em>to Quality.</em></h1>
-    <p class="hero-sub">Farm water that works when the season is on — centre pivots, rotating irrigation, pump stations and filtration for growers across Tasmania. Straight talk. Built to last.</p>
-    <p class="hero-formerly">Formerly Meyjor Industries Pty Ltd &nbsp;·&nbsp; Est. 2011</p>
-    <div class="hero-actions">
-      <a href="#services" class="btn-primary">Farm &amp; Irrigation</a>
-      <a href="#contact" class="btn-ghost">Talk to Mitchell</a>
-    </div>
-  </div>
-  <div class="hero-right fade-up">
-    <div class="hero-stat-stack">
-      <div class="stat-item">
-        <div class="stat-num">14+</div>
-        <div class="stat-label">Years in Operation</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">PIVOT</div>
-        <div class="stat-label">Farm Irrigation Systems</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">TAS</div>
-        <div class="stat-label">Hobart &amp; Launceston</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="">
-    <div class="section-label">About Us</div>
-    <h2>The Person Behind The Work</h2>
-    <div class="about-body">
-      <p>Mitchell Jacques founded Engineered Water Solutions after more than three decades in mechanical and water engineering — from remote PNG islands to 60-metre tunnels beneath the Brisbane River. Now based in Tasmania, he’s focused on the water systems farmers and growers actually rely on.</p>
-      <p>As founder and director of Meyjor Industries (2012–2023), Mitchell grew the business from $1M to $12M in a single year while maintaining zero OH&S incidents across every site he's ever run. That same standard applies to farm pump stations, pivot feed systems and irrigation upgrades.</p>
-      <p>Mitchell brings engineering depth plus commercial and legal rigour — Bachelor of Business (QUT), Bachelor of Arts in Economics (UQ), Master of Business Communication (UoW), and a near-complete Juris Doctor in Commercial Law (ANU). When he signs off on a contract, he understands every word of it — and he’ll explain it in plain English.</p>
-    </div>
-    <div style="margin-top:2rem;">
-      <div class="hero-eyebrow" style="margin-bottom:0.5rem;">Mitchell Jacques — Founder & Director</div>
-    </div>
-  </div>
-  <div class="about-right fade-up">
-    <div style="position:relative; margin-bottom:2rem;">
-      <img src="mitchell-jacques.jpg?v=20261018" alt="Mitchell Jacques — Founder, Engineered Water Solutions"
-        style="width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center top; border:1px solid rgba(0,180,180,0.2);">
-    </div>
-    <div class="about-feature">
-      <h4>30+ Years, Zero Incidents</h4>
-      <p>A career-wide perfect OH&S record across farms, mines, municipal works and remote sites. No exceptions — same standard on your paddock.</p>
-    </div>
-    <div class="about-feature">
-      <h4>Built for Growers</h4>
-      <p>Pivots, dams, rivers and dirty water — designed so the system keeps turning when the crop needs water, not when the salesman is next in town.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="services-header fade-up">
+  <div class="wrap hero-grid">
     <div>
-      <div class="section-label">What We Do</div>
-      <h2>Our Services</h2>
+      <p class="label">Engineered Water Solutions · Tasmania</p>
+      <h1>Farm water that keeps running.</h1>
+      <p class="lede" style="margin-top:1.25rem;">Pivots, pumps, dams and filtration across Tasmania. Thirty-odd years in water — mines, councils, big city utilities — now working Tassie paddocks and infrastructure. You deal with me, not a call centre.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+61475212468">Ring Mitchell</a>
+        <a class="btn btn-ghost" href="#work">What I do</a>
+      </div>
+      <p class="hero-note">Formerly Meyjor Industries Pty Ltd · Est. 2011</p>
     </div>
-    <p style="color:rgba(255,255,255,0.4); font-size:0.85rem; max-width:34ch; text-align:right; font-style:italic;">Pivots · Pump stations · Farm water — done properly.</p>
+    <aside class="hero-aside">
+      <strong>0475 212 468</strong>
+      <p>Text is fine — I’m often in a paddock or a pump shed.</p>
+      <p>Based in Tassie. If it’s on the island, I’ll get there.</p>
+    </aside>
   </div>
-  <div class="services-grid fade-up">
-    <div class="service-card">
-      <div class="service-num">01 — FARM</div>
-      <span class="service-icon">🌾</span>
-      <h3>Irrigation</h3>
-      <h4>Centre Pivot &amp; Rotating Systems</h4>
-      <p>Texas-style centre pivots and rotating irrigators — sizing, pump feed, electrics, filtration and commissioning so the circle keeps turning through the season. Poppies, pasture, potatoes and mixed cropping.</p>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <p class="label">What I do</p>
+    <h2>Water work. Done properly.</h2>
+    <p class="lede">Design, install support, fix and commission. Plain English. Fixed quotes where we can.</p>
+    <div class="cards">
+      <article class="card">
+        <p class="card-num">01</p>
+        <h3>Centre pivots &amp; irrigation</h3>
+        <p>Texas-style centre pivots and rotating irrigators — pump feed, electrics, filtration and getting the circle turning again when pressure drops at the end tower.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">02</p>
+        <h3>Pump stations &amp; boosters</h3>
+        <p>Duty matching, suction that doesn’t cavitate, VFDs, sealing. Sized for your head and flow — not a catalogue guess.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">03</p>
+        <h3>Dam, river &amp; bore filtration</h3>
+        <p>Keep grit, algae and sand out of nozzles and pivots so you’re not unblocking lines at 5am.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">04</p>
+        <h3>Off-grid &amp; solar water</h3>
+        <p>Bores, tanks, rainwater, solar pumping for lifestyle blocks and shacks. I’ve lived off-grid on solar for about ten years — I know what fails in winter.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">05</p>
+        <h3>Water &amp; wastewater infrastructure</h3>
+        <p>Treatment plant mechanical, clarifiers, pipelines, rising mains — the heavy stuff. Track record from mainland utilities and mine sites.</p>
+      </article>
+      <article class="card">
+        <p class="card-num">06</p>
+        <h3>Contractor support</h3>
+        <p>Bidding Tassie water or hydro work and need a mechanical/water lead? I turn up, read the drawings, and keep the water side honest.</p>
+      </article>
     </div>
-    <div class="service-card">
-      <div class="service-num">02 — FARM</div>
-      <span class="service-icon">💧</span>
-      <h3>Filtration</h3>
-      <h4>Dam, River &amp; Bore Water</h4>
-      <p>Keep sand, algae and grit out of nozzles and pivots. Practical filtration for real farm water — not lab-perfect theory — so you spend less time unblocking and more time growing.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03 — FARM</div>
-      <span class="service-icon">🔧</span>
-      <h3>Pumping</h3>
-      <h4>Pump Stations &amp; Boosters</h4>
-      <p>Reliable pump stations for pivot feed, rising mains and farm reticulation. VFDs, sealing, suction design and duty selection matched to your head, flow and power on site.</p>
+    <p style="margin-top:1.5rem;"><a href="farm-irrigation-tasmania.html">Farm irrigation →</a> · <a href="off-grid-water.html">Off-grid water →</a> · <a href="infrastructure.html">Infrastructure →</a></p>
+  </div>
+</section>
+
+<section class="section" id="where">
+  <div class="wrap">
+    <p class="label">Where I go</p>
+    <h2>Across the island.</h2>
+    <div class="map-block">
+      <svg class="tas-map" viewBox="0 0 280 360" role="img" aria-label="Map of Tasmania service regions">
+        <rect width="280" height="360" fill="var(--paper)"/>
+        <path fill="var(--eucalypt)" opacity="0.35" d="M140 28c40 8 78 38 92 78 12 34 8 72-6 104-10 24-28 48-38 74-8 20-10 48-28 62-22 16-52 18-78 8-28-12-48-40-58-70-12-36-14-74-4-108C32 120 58 70 92 48c18-12 32-22 48-20z"/>
+        <circle cx="118" cy="95" r="8" fill="var(--button-grass)"/>
+        <circle cx="155" cy="130" r="8" fill="var(--button-grass)"/>
+        <circle cx="130" cy="165" r="8" fill="var(--rust)"/>
+        <circle cx="145" cy="210" r="8" fill="var(--button-grass)"/>
+        <circle cx="120" cy="250" r="8" fill="var(--button-grass)"/>
+        <circle cx="175" cy="240" r="8" fill="var(--button-grass)"/>
+        <circle cx="200" cy="175" r="8" fill="var(--button-grass)"/>
+        <text x="20" y="340" fill="var(--dolerite)" font-size="12" font-family="Source Sans 3, sans-serif">Based in Tassie · statewide</text>
+      </svg>
+      <div>
+        <p class="lede">Based in Tassie. If it’s on the island, I’ll get there.</p>
+        <ul class="region-list" style="margin-top:1.25rem;">
+          <li>North West Coast</li>
+          <li>Northern Midlands</li>
+          <li>Central Highlands</li>
+          <li>Derwent Valley</li>
+          <li>Coal River / Southern Midlands</li>
+          <li>Huon</li>
+          <li>East Coast</li>
+          <li>Hobart &amp; Launceston</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CLIENTS -->
-<section id="clients">
-  <div class="section-label" style="justify-content:center;">Our Clients</div>
-  <h2 style="text-align:center; margin-bottom:0.5rem;">Trusted Delivery Background</h2>
-  <p class="clients-intro">Major utilities and contractors trust the same engineering that now backs Tasmanian farm and irrigation work.</p>
-  <div class="clients-grid fade-up">
-    <div class="client-cell"><span>Urban Utilities</span></div>
-    <div class="client-cell"><span>Sydney Water</span></div>
-    <div class="client-cell"><span>Seqwater</span></div>
-    <div class="client-cell"><span>Thiess</span></div>
-    <div class="client-cell"><span>John Holland</span></div>
-    <div class="client-cell"><span>Abergeldie</span></div>
-    <div class="client-cell"><span>Tasmania Growers</span></div>
-    <div class="client-cell"><span>Farm Irrigation</span></div>
+<section class="section" id="infra">
+  <div class="wrap">
+    <p class="label">Built for Tassie infrastructure</p>
+    <h2>Same standards as the big mainland jobs.</h2>
+    <p class="lede">Tasmania’s water and power run on two big outfits — TasWater and Hydro Tasmania — and a lot of contractors working for them. I’ve done this work at scale for Sydney Water, Urban Utilities, Seqwater, Thiess and John Holland. Same standards, now available here.</p>
+    <ul class="cap-list">
+      <li>Pump stations &amp; rising mains</li>
+      <li>Treatment plant mechanical</li>
+      <li>Clarifiers &amp; thickeners</li>
+      <li>Dewatering</li>
+      <li>Dam &amp; intake works</li>
+      <li>Mine water &amp; industrial systems</li>
+    </ul>
+    <p class="lede">Head contractor bidding Tassie water or hydro work and need a mechanical/water lead? Let’s talk.</p>
+    <p style="margin-top:1.5rem;"><a class="btn btn-grass" href="#contact">Talk infrastructure</a></p>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section id="testimonials">
-  <div class="section-label" style="justify-content:center;">Testimonials</div>
-  <div class="testimonial-block fade-up">
-    <p class="testimonial-text">Engineered Water Solutions exceeded our expectations in every way. From the precise engineering to the reliable systems, this team transformed our water management approach into a seamless operation. Their attention to detail and commitment to our needs made the entire experience truly outstanding.</p>
-    <div class="testimonial-author">Sarah Montana — Client</div>
+<section class="section" id="about">
+  <div class="wrap">
+    <p class="label">Who turns up</p>
+    <h2>Mitchell Jacques.</h2>
+    <div class="about-grid">
+      <img class="about-photo" src="mitchell-jacques.jpg?v=20261018" alt="Mitchell Jacques — Founder, Engineered Water Solutions" width="980" height="640">
+      <div>
+        <p class="lede">I’m the one who turns up. Thirty-odd years in mechanical and water engineering — remote islands, mine sites, council shutdowns, and a leaking tunnel sixty metres under the Brisbane River. Zero OH&S incidents career-wide. Now based in Tasmania, working paddocks and infrastructure.</p>
+        <p class="lede" style="margin-top:1rem;">I grew Meyjor Industries (2012–2023) from a small shop into a serious delivery business. EWS carries that on — Est. 2011 under the Meyjor banner, same bloke, same standards.</p>
+        <p class="lede" style="margin-top:1rem;"><strong>I read the contract so you don’t have to.</strong></p>
+        <details class="paperwork">
+          <summary>The paperwork</summary>
+          <p style="margin-top:0.75rem;" class="lede">Bachelor of Business (QUT) · Bachelor of Arts in Economics (UQ) · Master of Business Communication (UoW) · near-complete Juris Doctor, Commercial Law (ANU). Useful when the paperwork gets thick.</p>
+        </details>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="">
-    <div class="section-label">Get In Touch</div>
-    <h2>Our Contacts</h2>
-    <div class="contact-details">
-      <div class="contact-item">
-        <span class="contact-item-label">Hobart CBD</span>
-        <span class="contact-item-value">85 Murray Street, Hobart TAS 7000</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Launceston CBD</span>
-        <span class="contact-item-value">63 St John Street, Launceston TAS 7250</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Mailing Address</span>
-        <span class="contact-item-value">PO Box 76, Kings Meadows TAS 7249</span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Phone</span>
-        <span class="contact-item-value"><a href="tel:+61475212468">0475 212 468</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="contact-item-label">Email</span>
-        <span class="contact-item-value"><a href="mailto:mitchell@ewsol.au">mitchell@ewsol.au</a></span>
-      </div>
+<section class="section" id="clients">
+  <div class="wrap">
+    <p class="label">Who I’ve worked for</p>
+    <h2>Big jobs on the mainland.</h2>
+    <p class="lede">Same standards on your farm.</p>
+    <div class="client-strip">
+      <span>Urban Utilities</span>
+      <span>Sydney Water</span>
+      <span>Seqwater</span>
+      <span>Thiess</span>
+      <span>John Holland</span>
+      <span>Abergeldie</span>
+      <span>BMA</span>
     </div>
-  </div>
-  <div class="">
-    <form class="contact-form" action="mailto:mitchell@ewsol.au" method="post" enctype="text/plain">
-      <div class="form-group">
-        <label for="contact-name">Name</label>
-        <input id="contact-name" name="Name" type="text" placeholder="Your name" required autocomplete="name">
-      </div>
-      <div class="form-group">
-        <label for="contact-email">Email</label>
-        <input id="contact-email" name="Email" type="email" placeholder="your@email.com" required autocomplete="email">
-      </div>
-      <div class="form-group">
-        <label for="contact-message">Message</label>
-        <textarea id="contact-message" name="Message" placeholder="Pivot, pump station, filtration, poppy or farm water — tell us what you need..." required></textarea>
-      </div>
-      <button type="submit" class="form-submit">Send Message</button>
-    </form>
   </div>
 </section>
 
-<!-- SPECIALIST — farm first, mining retained -->
-<section id="specialist" style="background: var(--ink);">
-  <div class="section-label">Specialist Services</div>
-  <h2>Built for Growers &amp; Industry</h2>
-  <p style="color:rgba(255,255,255,0.45); font-size:0.9rem; max-width:55ch; margin-bottom:3rem; font-weight:300; line-height:1.7;">
-    Tasmania-first: centre pivots, rotating irrigators, poppy and crop water, farm pump stations — backed by decades of heavy industrial water engineering when the job gets hard.
-  </p>
-  <div class="services-grid fade-up" style="margin-top:0;">
-
-    <div class="service-card" style="cursor:pointer;" onclick="location.href='farm-irrigation-tasmania.html'">
-      <div class="service-num">01 — GROWERS</div>
-      <span class="service-icon">🌀</span>
-      <h3>Centre Pivots</h3>
-      <h4>Rotating Irrigation Systems</h4>
-      <p>Centre pivot and rotating irrigators — the big Texas-style circles. Pump duty, filtration, electrics and commissioning so the machine puts water where the crop needs it.</p>
-      <a href="farm-irrigation-tasmania.html" style="display:inline-block; margin-top:1.5rem; font-family:'DM Mono',monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(0,180,180,0.3); padding-bottom:2px;">View Farm Irrigation →</a>
+<section class="section" id="jobs">
+  <div class="wrap">
+    <p class="label">Jobs</p>
+    <h2>Problem → fix → result.</h2>
+    <p class="lede">A few from the mainland track record. Locations labelled. More on the projects page.</p>
+    <div class="job-grid">
+      <a class="job" href="projects.html">
+        <img src="project-lake-vermont.jpg" alt="Lake Vermont sewage treatment plant upgrade" loading="lazy" width="640" height="400">
+        <div class="job-body">
+          <p class="job-loc">QLD · Lake Vermont</p>
+          <h3>STP not meeting licence</h3>
+          <p>Upgraded the plant to meet environmental licence while beating mechanical targets — stopped the ongoing operational headache.</p>
+        </div>
+      </a>
+      <a class="job" href="projects.html">
+        <img src="project-bulimba-tunnel.jpg" alt="Bulimba tunnel pipe refurbishment" loading="lazy" width="640" height="400">
+        <div class="job-body">
+          <p class="job-loc">QLD · Brisbane</p>
+          <h3>Leaking tunnel, 60 m down</h3>
+          <p>Engineering and estimates to refurbish two pipes under the Brisbane River without a shutdown that would’ve crippled the network.</p>
+        </div>
+      </a>
+      <a class="job" href="projects.html">
+        <img src="project-mackay-scada.jpg" alt="Mackay SCADA and dosing upgrades" loading="lazy" width="640" height="400">
+        <div class="job-body">
+          <p class="job-loc">QLD · Mackay region</p>
+          <h3>SCADA &amp; dosing rollout</h3>
+          <p>Chemical dosing and SCADA/PLC upgrades across nine outlying regions — plus a high-filter package for irrigation reuse.</p>
+        </div>
+      </a>
     </div>
-
-    <div class="service-card" style="cursor:pointer;" onclick="location.href='farm-irrigation-tasmania.html#poppies'">
-      <div class="service-num">02 — GROWERS</div>
-      <span class="service-icon">🌺</span>
-      <h3>Poppies &amp; Crops</h3>
-      <h4>Tasmanian Growers</h4>
-      <p>Irrigation that matches crop stages — poppies, potatoes, pasture and mixed farming. Practical scheduling support through reliable water delivery, not guesswork.</p>
-      <a href="farm-irrigation-tasmania.html#poppies" style="display:inline-block; margin-top:1.5rem; font-family:'DM Mono',monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(0,180,180,0.3); padding-bottom:2px;">View Grower Services →</a>
-    </div>
-
-    <div class="service-card" style="cursor:pointer;" onclick="location.href='water-wastewater-bowen-basin.html'">
-      <div class="service-num">03 — INDUSTRY</div>
-      <span class="service-icon">⛏️</span>
-      <h3>Heavy Industry</h3>
-      <h4>Mine &amp; Utility Water</h4>
-      <p>Still available: mine water, wastewater and clarifier engineering from Bowen Basin and major utility programs — for clients who need that depth.</p>
-      <a href="water-wastewater-bowen-basin.html" style="display:inline-block; margin-top:1.5rem; font-family:'DM Mono',monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(0,180,180,0.3); padding-bottom:2px;">View Industry →</a>
-    </div>
-
+    <p style="margin-top:1.25rem;"><a href="projects.html">All projects →</a></p>
   </div>
 </section>
 
-<!-- FOOTER -->
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="label">How it works</p>
+    <h2>Three steps. No run-around.</h2>
+    <div class="steps">
+      <div class="step">
+        <strong>1. Ring or text</strong>
+        <p>0475 212 468. Tell me what’s broken or what you’re building. Text is fine.</p>
+      </div>
+      <div class="step">
+        <strong>2. I come out and look</strong>
+        <p>Site visits by arrangement. I’ll tell you upfront if there’s a call-out before we commit to a quote.</p>
+      </div>
+      <div class="step">
+        <strong>3. Fixed quote</strong>
+        <p>Clear scope. No surprise extras buried in the fine print. I read the contract — so do you, if you want.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <p class="label">Contact</p>
+    <h2>Ring, text, or send a note.</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <span>Phone / text</span>
+          <a class="phone-big" href="tel:+61475212468">0475 212 468</a>
+        </div>
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:mitchell@ewsol.au">mitchell@ewsol.au</a>
+        </div>
+        <div class="contact-item">
+          <span>Hobart (by appointment)</span>
+          <p>85 Murray Street, Hobart TAS 7000</p>
+        </div>
+        <div class="contact-item">
+          <span>Launceston (by appointment)</span>
+          <p>63 St John Street, Launceston TAS 7250</p>
+        </div>
+        <div class="contact-item">
+          <span>Mail</span>
+          <p>PO Box 76, Kings Meadows TAS 7249</p>
+        </div>
+        <div class="contact-item">
+          <span>Service area</span>
+          <p>Tasmania — statewide</p>
+        </div>
+      </div>
+      <form class="form" action="mailto:mitchell@ewsol.au" method="post" enctype="text/plain">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="Name" required autocomplete="name">
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="Phone" type="tel" required autocomplete="tel">
+        </div>
+        <div>
+          <label for="town">Town</label>
+          <input id="town" name="Town" required>
+        </div>
+        <div>
+          <label for="msg">What’s broken / what do you need?</label>
+          <textarea id="msg" name="Message" required placeholder="Pivot, pump, filtration, off-grid, infrastructure…"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="company">Company</label>
+          <input id="company" name="Company" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="btn btn-primary" type="submit">Send to Mitchell</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <div class="footer-brand">EWS<span>.</span> Engineered Water Solutions</div>
-  <div class="footer-note">Formerly Meyjor Industries Pty Ltd &nbsp;·&nbsp; Est. 2011 &nbsp;·&nbsp; Hobart &amp; Launceston, TAS</div>
+  <div class="wrap footer-inner">
+    <div>
+      <strong>EWS.</strong> Engineered Water Solutions<br>
+      Formerly Meyjor Industries Pty Ltd · Est. 2011
+    </div>
+    <div>
+      PO Box 76, Kings Meadows TAS 7249<br>
+      <a href="mailto:mitchell@ewsol.au">mitchell@ewsol.au</a> · <a href="tel:+61475212468">0475 212 468</a>
+    </div>
+  </div>
 </footer>
 
-<script>
-  // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    ent
+</body>
+</html>
