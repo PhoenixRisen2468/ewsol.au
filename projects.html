@@ -3,721 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Engineered Water Solutions</title>
+<title>Projects — Engineered Water Solutions | Tasmania</title>
+<meta name="description" content="Real water jobs — STPs, tunnels, pivots, SCADA. Mainland track record, same standards for Tassie. Ring Mitchell 0475 212 468.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon.png" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
-  :root {
-    --ink: #0a0e14;
-    --steel: #1c2635;
-    --teal: #00b4b4;
-    --teal-dark: #007f7f;
-    --mist: #e8f0f0;
-    --white: #ffffff;
-    --mid: #6b8080;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--ink);
-    color: var(--white);
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(10,14,20,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,180,180,0.15);
-  }
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.08em;
-    color: var(--white);
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--teal); }
-  nav ul { display: flex; gap: 2.5rem; list-style: none; }
-  nav ul a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--mist);
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.2s, color 0.2s;
-  }
-  nav ul a:hover, nav ul a.active { opacity: 1; color: var(--teal); }
-  .nav-cta {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    border: 1px solid var(--teal);
-    padding: 0.55rem 1.4rem;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-  .nav-cta:hover { background: var(--teal); color: var(--ink); }
-
-  /* ── PAGE HERO ── */
-  .page-hero {
-    padding: 10rem 4rem 5rem;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(0,180,180,0.1);
-  }
-  .page-hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 50% 100% at 100% 50%, rgba(0,180,180,0.07) 0%, transparent 70%);
-  }
-  .hero-grid-lines {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(0,180,180,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,180,180,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-  .page-hero-inner { position: relative; z-index: 2; max-width: 800px; }
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .section-label::before {
-    content: '';
-    display: block; width: 2rem; height: 1px; background: var(--teal);
-  }
-  h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3.5rem, 7vw, 6rem);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    margin-bottom: 1.5rem;
-  }
-  h1 em { font-style: normal; color: var(--teal); }
-  .page-hero p {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.55);
-    font-weight: 300;
-    line-height: 1.7;
-    max-width: 60ch;
-    margin-bottom: 2rem;
-  }
-
-  /* ── FILTER BAR ── */
-  .filter-bar {
-    padding: 2rem 4rem;
-    background: var(--steel);
-    display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
-    border-bottom: 1px solid rgba(0,180,180,0.1);
-  }
-  .filter-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--mid);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-right: 0.5rem;
-  }
-  .filter-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    border: 1px solid rgba(255,255,255,0.12);
-    padding: 0.4rem 1rem;
-    background: none;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .filter-btn:hover, .filter-btn.active {
-    color: var(--teal);
-    border-color: var(--teal);
-    background: rgba(0,180,180,0.06);
-  }
-
-  /* ── STATS BAR ── */
-  .stats-bar {
-    padding: 3rem 4rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: rgba(0,180,180,0.08);
-  }
-  .stat-cell {
-    background: var(--ink);
-    padding: 2rem;
-    text-align: center;
-  }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
-    color: var(--teal);
-    line-height: 1;
-    letter-spacing: 0.02em;
-  }
-  .stat-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--mid);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-top: 0.4rem;
-  }
-
-  /* ── FEATURED PROJECTS ── */
-  .featured-section {
-    padding: 5rem 4rem;
-  }
-  .featured-section h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    letter-spacing: 0.03em;
-    margin-bottom: 3rem;
-  }
-
-  /* Featured large card */
-  .project-featured {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: rgba(0,180,180,0.1);
-    margin-bottom: 1px;
-  }
-  .project-featured-img {
-    aspect-ratio: 16/10;
-    overflow: hidden;
-    background: var(--steel);
-    position: relative;
-  }
-  .project-featured-img img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .project-featured:hover .project-featured-img img { transform: scale(1.03); }
-  .project-featured-img .img-placeholder {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, var(--steel) 0%, rgba(0,180,180,0.15) 100%);
-  }
-  .project-featured-content {
-    background: var(--steel);
-    padding: 3.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .project-type {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 1rem;
-  }
-  .project-featured-content h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-  .project-client {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--mid);
-    letter-spacing: 0.1em;
-    margin-bottom: 1.5rem;
-  }
-  .project-featured-content p {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.75;
-    font-weight: 300;
-    margin-bottom: 2rem;
-  }
-  .project-outcome {
-    padding: 1rem 1.5rem;
-    background: rgba(0,180,180,0.08);
-    border-left: 2px solid var(--teal);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--teal);
-    letter-spacing: 0.05em;
-  }
-
-  /* Project grid cards */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(0,180,180,0.08);
-    margin-bottom: 1px;
-  }
-  .project-card {
-    background: var(--ink);
-    transition: background 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-  .project-card:hover { background: rgba(0,180,180,0.04); }
-  .project-card::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: var(--teal);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-    transform-origin: left;
-  }
-  .project-card:hover::after { transform: scaleX(1); }
-  .project-card-img {
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    background: var(--steel);
-  }
-  .project-card-img img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .project-card:hover .project-card-img img { transform: scale(1.04); }
-  .project-card-img .img-placeholder {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, var(--steel) 0%, rgba(0,180,180,0.1) 100%);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--mid);
-    letter-spacing: 0.1em;
-  }
-  .project-card-body { padding: 2rem; }
-  .project-card-body .project-type { margin-bottom: 0.6rem; }
-  .project-card-body h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 0.03em;
-    line-height: 1.1;
-    margin-bottom: 0.4rem;
-  }
-  .project-card-body .project-client { margin-bottom: 1rem; }
-  .project-card-body p {
-    font-size: 0.875rem;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* ── ADDITIONAL WORKS ── */
-  .additional-section {
-    padding: 5rem 4rem;
-    background: var(--steel);
-  }
-  .additional-section h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    letter-spacing: 0.03em;
-    margin-bottom: 0.5rem;
-  }
-  .additional-section .sub {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 3rem;
-    font-weight: 300;
-  }
-  .works-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: rgba(0,180,180,0.08);
-  }
-  .work-item {
-    background: var(--steel);
-    padding: 1.5rem 2rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    transition: background 0.2s;
-  }
-  .work-item:hover { background: rgba(0,180,180,0.04); }
-  .work-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--teal);
-    letter-spacing: 0.1em;
-    opacity: 0.6;
-    min-width: 2rem;
-    padding-top: 0.15rem;
-  }
-  .work-text {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-  .work-text strong {
-    color: rgba(255,255,255,0.85);
-    font-weight: 500;
-  }
-
-  /* ── CTA ── */
-  .cta-section {
-    padding: 6rem 4rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(0,180,180,0.06) 0%, transparent 70%);
-  }
-  .cta-section h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    letter-spacing: 0.03em;
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  .cta-section p {
-    color: rgba(255,255,255,0.5);
-    font-size: 1rem;
-    font-weight: 300;
-    margin-bottom: 2.5rem;
-    position: relative;
-  }
-  .btn-primary {
-    background: var(--teal);
-    color: var(--ink);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.9rem 2.5rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s;
-    position: relative;
-  }
-  .btn-primary:hover { background: var(--teal-dark); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    border-top: 1px solid rgba(0,180,180,0.1);
-    padding: 2rem 4rem;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-brand {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.4);
-  }
-  .footer-brand span { color: var(--teal); }
-  .footer-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 0.1em;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    nav ul { display: none; }
-    .page-hero, .featured-section, .additional-section, .cta-section { padding: 6rem 1.5rem 3rem; }
-    .filter-bar { padding: 1.5rem; }
-    .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 0; }
-    .project-featured { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .works-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
-  }
+  :root { --dolerite:#3b3f42; --button-grass:#6b7a3a; --rust:#a5522d; --cream:#f3efe6; --bass-strait:#2f5566; --paper:#faf7f0; --line:rgba(59,63,66,.15); }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Source Sans 3",system-ui,sans-serif; background:var(--cream); color:var(--dolerite); line-height:1.55; }
+  .wrap { width:min(1100px, calc(100% - 2rem)); margin:0 auto; }
+  nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; border-bottom:1px solid var(--line); position:sticky; top:0; background:color-mix(in srgb,var(--cream) 92%,transparent); backdrop-filter:blur(8px); z-index:10; }
+  a { color:var(--bass-strait); }
+  .logo { font-family:"Archivo Black",Impact,sans-serif; text-decoration:none; color:var(--dolerite); font-size:1.3rem; }
+  .logo span { color:var(--button-grass); }
+  .btn { display:inline-flex; padding:.85rem 1.25rem; background:var(--rust); color:#fff !important; text-decoration:none; font-weight:700; min-height:44px; align-items:center; }
+  h1,h2,h3 { font-family:"Archivo Black",Impact,sans-serif; font-weight:400; line-height:1.15; }
+  h1 { font-size:clamp(2rem,5vw,3.2rem); margin:1.5rem 0 .75rem; }
+  .lede { max-width:55ch; margin-bottom:1.5rem; color:color-mix(in srgb,var(--dolerite) 80%,transparent); }
+  .label { font-size:.75rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--button-grass); margin-top:2rem; }
+  .grid { display:grid; gap:1rem; grid-template-columns:repeat(3,1fr); margin:1.5rem 0 3rem; }
+  .job { background:var(--paper); border:1px solid var(--line); overflow:hidden; }
+  .job img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; }
+  .job-body { padding:1rem 1.1rem 1.25rem; }
+  .job-loc { font-size:.78rem; font-weight:700; color:var(--rust); text-transform:uppercase; letter-spacing:.05em; margin-bottom:.35rem; }
+  .job h3 { font-size:1.15rem; margin-bottom:.45rem; }
+  .job p { font-size:.95rem; }
+  footer { padding:1.5rem 0; border-top:1px solid var(--line); font-size:.9rem; margin-bottom:2rem; }
+  @media (max-width:900px){ .grid{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="/">EWS<span>.</span></a>
+    <a class="btn" href="tel:+61475212468">Ring Mitchell</a>
+  </nav>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">EWS<span>.</span></a>
-  <ul>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="projects.html" class="active">Projects</a></li>
-    <li><a href="index.html#clients">Clients</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
-  <a href="index.html#contact" class="nav-cta">Get in Touch</a>
-</nav>
+  <p class="label">Jobs</p>
+  <h1>Problem → fix → result.</h1>
+  <p class="lede">Real jobs from the mainland track record. Locations labelled. Same standards for Tassie paddocks and infrastructure.</p>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="hero-grid-lines"></div>
-  <div class="page-hero-inner">
-    <div class="section-label">Our Work</div>
-    <h1>Projects That<br><em>Prove It.</em></h1>
-    <p>From 60 metres beneath the Brisbane River to remote islands in the Torres Strait and Papua New Guinea — every project delivered on time, on budget, zero incidents.</p>
-  </div>
-</section>
-
-<!-- STATS BAR -->
-<div class="stats-bar">
-  <div class="stat-cell">
-    <div class="stat-num">20+</div>
-    <div class="stat-label">Clarifiers & Thickeners Installed</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-num">15+</div>
-    <div class="stat-label">Sewerage Pump Stations Upgraded</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-num">0</div>
-    <div class="stat-label">OH&S Incidents Career-Wide</div>
-  </div>
-  <div class="stat-cell">
-    <div class="stat-num">30%+</div>
-    <div class="stat-label">Avg Profit Margin on Contracts</div>
-  </div>
-</div>
-
-<!-- FILTER -->
-<div class="filter-bar">
-  <span class="filter-label">Filter:</span>
-  <button class="filter-btn active">All</button>
-  <button class="filter-btn">STP / Wastewater</button>
-  <button class="filter-btn">Mining</button>
-  <button class="filter-btn">Remote / D&C</button>
-  <button class="filter-btn">Refurbishment</button>
-  <button class="filter-btn">SCADA / Technology</button>
-</div>
-
-<!-- FEATURED PROJECTS -->
-<section class="featured-section">
-  <div class="section-label">Featured</div>
-  <h2>Landmark Projects</h2>
-
-  <!-- FEATURED 1 — Lake Vermont -->
-  <div class="project-featured" style="margin-bottom:1px;">
-    <div class="project-featured-img">
-      <img src="project-lake-vermont.jpg" alt="Lake Vermont STP Upgrade"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="img-placeholder" style="display:none;">
-        <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--mid);letter-spacing:0.1em;">project-lake-vermont.jpg</span>
+  <div class="grid">
+    <article class="job">
+      <img src="project-lake-vermont.jpg" alt="Lake Vermont STP" loading="lazy" width="640" height="400">
+      <div class="job-body">
+        <p class="job-loc">Client: Thiess · BMA Coal · Queensland</p>
+        <h3>Lake Vermont STP</h3>
+        <p>Upgraded the Sewage Treatment Plant to meet Environmental Licence requirements while exceeding mechanical performance targets. Resolved an ongoing operational problem that had been costing the site significantly in sucker truck expenses.</p>
       </div>
-    </div>
-    <div class="project-featured-content">
-      <div class="project-type">Mining / STP Upgrade</div>
-      <h3>Lake Vermont STP</h3>
-      <div class="project-client">Client: Thiess · BMA Coal · Queensland</div>
-      <p>Upgraded the Sewage Treatment Plant to meet Environmental Licence requirements while exceeding mechanical performance targets. Resolved an ongoing operational problem that had been costing the site significantly in sucker truck expenses.</p>
-      <div class="project-outcome">Outcome: $50,000/month saving on sucker truck costs with JP Richards</div>
-    </div>
-  </div>
-
-  <!-- FEATURED 2 — Bulimba Tunnel (reversed layout) -->
-  <div class="project-featured" style="margin-bottom:1px;">
-    <div class="project-featured-content">
-      <div class="project-type">Refurbishment / Live Works</div>
-      <h3>Bulimba Tunnel</h3>
-      <div class="project-client">60m Below the Brisbane River · Urban Utilities</div>
-      <p>Resolved engineering challenges and provided estimates for refurbishing two pipes within a leaking tunnel situated 60 metres beneath the Brisbane River. Shutting down the pipeline would have required a continuous convoy of vacuum trucks across the Gateway Bridge — making failure not an option.</p>
-      <div class="project-outcome">Outcome: Live infrastructure preserved. Zero pipeline shutdown. Zero incidents.</div>
-    </div>
-    <div class="project-featured-img">
-      <img src="project-bulimba-tunnel.jpg" alt="Bulimba Tunnel Refurbishment"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="img-placeholder" style="display:none;">
-        <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--mid);letter-spacing:0.1em;">project-bulimba-tunnel.jpg</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROJECT GRID -->
-  <div class="projects-grid" style="margin-top:1px;">
-
-    <!-- Poruma Island -->
-    <div class="project-card">
-      <div class="project-card-img">
-        <img src="project-poruma-island.jpg" alt="Poruma Island STP"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="img-placeholder" style="display:none;">project-poruma-island.jpg</div>
-      </div>
-      <div class="project-card-body">
-        <div class="project-type">Remote D&C / Package STP</div>
+    </article>
+    <article class="job">
+      <img src="project-bulimba-tunnel.jpg" alt="Poruma Island" loading="lazy" width="640" height="400">
+      <div class="job-body">
+        <p class="job-loc">Torres Strait · TSRA</p>
         <h3>Poruma Island</h3>
-        <div class="project-client">Torres Strait · TSRA</div>
         <p>Managed full estimation, project management, and installation of a Package Sewage Treatment Plant on a remote Torres Strait island. Oversaw placement of two 12-metre specially coated steel tanks while managing concurrent contracts.</p>
       </div>
-    </div>
-
-    <!-- Sydney Water Digester Lid -->
-    <div class="project-card">
-      <div class="project-card-img">
-        <img src="project-digester-lid.jpg" alt="Sydney Water Digester Lid"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="img-placeholder" style="display:none;">project-digester-lid.jpg</div>
-      </div>
-      <div class="project-card-body">
-        <div class="project-type">First of Its Kind in Australia</div>
+    </article>
+    <article class="job">
+      <img src="project-digester-lid.jpg" alt="Sydney Water Digester Lid" loading="lazy" width="640" height="400">
+      <div class="job-body">
+        <p class="job-loc">Sydney Water · NSW</p>
         <h3>Sydney Water Digester Lid</h3>
-        <div class="project-client">Sydney Water · NSW</div>
         <p>Installed Australia's first fixed digester lid — a 12-metre diameter lid atop a 13-metre concrete tank with rollers for vertical movement based on methane levels. Fabricated in two halves on-site, welded and coated to Sydney Water's stringent standards using a 300-tonne rated crane.</p>
       </div>
-    </div>
-
-    <!-- Lihir Island PNG -->
-    <div class="project-card">
-      <div class="project-card-img">
-        <img src="project-lihir-island.jpg" alt="Lihir Island PNG STP"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="img-placeholder" style="display:none;">project-lihir-island.jpg</div>
-      </div>
-      <div class="project-card-body">
-        <div class="project-type">International D&C / Remote</div>
+    </article>
+    <article class="job">
+      <img src="project-lihir-island.jpg" alt="Lihir Island" loading="lazy" width="640" height="400">
+      <div class="job-body">
+        <p class="job-loc">Papua New Guinea</p>
         <h3>Lihir Island</h3>
-        <div class="project-client">Papua New Guinea</div>
         <p>Oversaw site operations and managed installation of a circular Package Sewerage Treatment Plant on Lihir Island in PNG. Collaborated closely with all stakeholders including local labourers to ensure project success in a remote international environment.</p>
       </div>
-    </div>
-
-    <!-- Mackay SCADA -->
-    <div class="project-card">
-      <div class="project-card-img">
-        <img src="project-mackay-scada.jpg" alt="Mackay SCADA PLC Upgrades"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="img-placeholder" style="display:none;">project-mackay-scada.jpg</div>
-      </div>
-      <div class="project-card-body">
-        <div class="project-type">SCADA / Technology</div>
+    </article>
+    <article class="job">
+      <img src="project-mackay-scada.jpg" alt="Mackay SCADA Rollout" loading="lazy" width="640" height="400">
+      <div class="job-body">
+        <p class="job-loc">Mackay Regional Council · QLD</p>
         <h3>Mackay SCADA Rollout</h3>
-        <div class="project-client">Mackay Regional Council · QLD</div>
         <p>Upgrades of water treatment chemical dosing systems across nine outlying regions of Mackay, including full SCADA and PLC upgrades. Also delivered a high-filter package plant to enable wastewater irrigation by sprinklers across the region.</p>
       </div>
-    </div>
-
-    <!-- Brisbane Reservoir Roofs -->
-    <div class="project-card">
-      <div class="project-card-img">
-        <img src="project-reservoir-roofs.jpg" alt="Brisbane Reservoir Roofs"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="img-placeholder" style="display:none;">project-reservoir-roofs.jpg</div>
-      </div>
-      <div class="project-card-body">
-        <div class="project-type">Refurbishment / Infrastructure</div>
+    </article>
+    <article class="job">
+      <img src="project-reservoir-roofs.jpg" alt="Brisbane Reservoir Roofs" loading="lazy" width="640" height="400">
+      <div class="job-body">
+        <p class="job-loc">Urban Utilities · Brisbane</p>
         <h3>Brisbane Reservoir Roofs</h3>
-        <div class="project-client">Urban Utilities · Brisbane</div>
         <p>Refurbishment and redesign of five drinking reservoir roofs and associated SCADA and valves for Urban Utilities across Brisbane. Also completed refurbishment of a 1-acre reservoir roof — all while maintaining supply continuity.</p>
       </div>
-    </div>
-
-    <!-- Newcastle Digesters -->
-    <div class="project-card">
-      <div class="project-card-img">
-        <img src="project-newcastle-digesters.jpg" alt="Newcastle Digester Refurbishment"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="img-placeholder" style="display:none;">project-newcastle-digesters.jpg</div>
-      </div>
-      <div class="project-card-body">
-        <div class="project-type">Refurbishment / Mechanical</div>
+    </article>
+    <article class="job">
+      <img src="project-newcastle-digesters.jpg" alt="Newcastle Digesters" loading="lazy" width="640" height="400">
+      <div class="job-body">
+        <p class="job-loc">Hunter Water · NSW</p>
         <h3>Newcastle Digesters</h3>
-        <div class="project-client">Hunter Water · NSW</div>
         <p>Installation of blowers and full refurbishment of digester tanks in Newcastle, including both digital and analogue VSDs and VFDs. Delivered upgraded lifting frames and diffusers in a live digester tank in Brisbane — 21 new units redesigned and installed without shutdown.</p>
       </div>
-    </div>
-
+    </article>
   </div>
-</section>
 
-<!-- ADDITIONAL WORKS -->
-<section class="additional-section">
-  <div class="section-label">Full Portfolio</div>
-  <h2>Additional Works</h2>
-  <p class="sub">A selection from 30+ years of completed contracts across Australia and the Pacific.</p>
-  <div class="works-grid">
-    <div class="work-item">
-      <span class="work-num">01</span>
-      <span class="work-text"><strong>20+ Clarifiers & Thickeners</strong> — Comprehensive proficiency in all facets of clarifier design and installation across multiple sites and clients.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">02</span>
-      <span class="work-text"><strong>Brisbane Pump Stations</strong> — Upgrading and refurbishing 15 sewerage pump stations across Brisbane for Urban Utilities.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">03</span>
-      <span class="work-text"><strong>Chemical Dosing Skids</strong> — Installation of chemical dosing skids at multiple locations across Queensland and NSW.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">04</span>
-      <span class="work-text"><strong>Inlet Screen & Grit Chamber</strong> — Upgrade of inlet screen and grit chamber, Brisbane. Upgrade and refurbishment of grit chamber and re-coating, Ipswich.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">05</span>
-      <span class="work-text"><strong>Parramatta Methane</strong> — Refurbishment of methane gas pipe and pump in Parramatta for Sydney Water.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">06</span>
-      <span class="work-text"><strong>Adelaide Hills Digester Lid</strong> — Installation of digester lid and associated piping and complementing methane heat exchange.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">07</span>
-      <span class="work-text"><strong>Sydney Water Decanters</strong> — Specialised installation of Sydney Water designed decanters across multiple sites.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">08</span>
-      <span class="work-text"><strong>Concrete Tank Waterproofing</strong> — Waterproofing of concrete tank reservoirs at five locations across QLD and NSW.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">09</span>
-      <span class="work-text"><strong>Lamella Installation</strong> — Installation of Lamella clarification systems in Brisbane.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">10</span>
-      <span class="work-text"><strong>60m Shaft Platforms</strong> — Removal of 60m shaft steps and platforms at two locations in Brisbane.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">11</span>
-      <span class="work-text"><strong>Townsville STP Clarifiers</strong> — Project Manager and Site Supervisor for 3 × Tertiary Clarifiers at Townsville Sewerage Treatment Plant.</span>
-    </div>
-    <div class="work-item">
-      <span class="work-num">12</span>
-      <span class="work-text"><strong>Thiess / BMA Mine Sites</strong> — Pumping and mechanical solutions across Peak Downs, Lake Vermont, and multiple BMA coal sites via Dowdens.</span>
-    </div>
-  </div>
-</section>
+  <p><a class="btn" href="tel:+61475212468">0475 212 468</a> · <a href="/">Home</a> · <a href="farm-irrigation-tasmania.html">Farm irrigation</a> · <a href="infrastructure.html">Infrastructure</a></p>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="section-label" style="justify-content:center;">Work With Us</div>
-  <h2>Your Project Is Next.</h2>
-  <p>From feasibility through to final sign-off and 12-month warranty. Let's talk.</p>
-  <a href="index.html#contact" class="btn-primary">Get in Touch</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">EWS<span>.</span> Engineered Water Solutions</div>
-  <div class="footer-note">Formerly Meyjor Industries Pty Ltd &nbsp;·&nbsp; Est. 2011 &nbsp;·&nbsp; Hobart &amp; Launceston, TAS</div>
-</footer>
-
+  <footer>
+    Engineered Water Solutions · Formerly Meyjor Industries Pty Ltd · Est. 2011 · PO Box 76, Kings Meadows TAS 7249
+  </footer>
+</div>
 </body>
 </html>
